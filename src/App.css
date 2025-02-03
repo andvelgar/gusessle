@@ -1,0 +1,82 @@
+.app {
+    width: 100vw;
+    min-height: 100vh;
+    background: hsl(216, 31%, 13%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.shadow-card {
+    background: rgb(224, 220, 220);
+    border-radius: 7px;
+    box-shadow: 0px 0px 20px 6px rgb(0 0 0 / 75%);
+    width: fit-content;
+    height: fit-content;
+    padding: 20px;
+}
+
+.guess-table {
+    max-width: 80vw;
+}
+
+th {
+
+    color: black;
+    background-color: rgb(201, 192, 192);
+}
+
+td {
+    width: min-content;
+    padding: 10px;
+}
+
+td .cell {
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+
+    margin: auto;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    height: 5vw;
+
+}
+
+td .cell:not(.id) {
+    width: 5vw;
+    font-size: 2vw;
+}
+
+td .cell.id {
+    padding: 0 10px;
+    font-size: 2rem;
+}
+td .cell.id div{
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+}
+
+td .cell.id div img{
+    align-self: flex-end;
+}
+td .cell span {
+    font-weight: 400;
+    margin: auto;
+}
+
+td .cell.correct {
+    background: rgba(18, 153, 18, 0.7);
+}
+
+td .cell.wrong {
+    background: rgba(255, 0, 0, 0.767);
+}
+
+td .cell.warning {
+    background: rgba(241, 185, 1, 0.699);
+}
