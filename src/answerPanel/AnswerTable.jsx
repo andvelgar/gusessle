@@ -1,38 +1,41 @@
-import React from "react"
-import { useState } from "react";
-import { guess, guesses, format, getGuessList } from "../api/playersApi";
+import React from "react";
 
-import { Autocomplete, MenuItem, Select, TextField } from '@mui/material';
-import TableHeader from "./TableHeader";
+import { Autocomplete, TextField } from '@mui/material';
 import TableBody from "./TableBody";
+import TableHeader from "./TableHeader";
 
 export default function AnswerTable({
-    league
+    league,
+    correctGuess,
+    guessList,
+    onGuess,
+    showInput
 }) {
 
-    const [guessList, setGuessList] = useState([])
-    const [suggestions, setSuggestions] = useState([])
+    
+    
 
+    
 
-
-    function resetInput() {
-    }
-    function onGuess(id) {
-        let guessObj = guess(id)
-        resetInput()
-        setGuessList([...guessList, guessObj])
-    }
-
-
-    return <div className="shadow-card">
-        <Select defaultValue={''} onChange={(e)=>onGuess(e.target.value)}>
-            {league.options.map(g=>{
-                return <MenuItem key={g.id} value={g.id}>{g.name}</MenuItem>
-            })}
-        </Select>
+    return <div className="answer-table">
         <table className="guess-table">
-            <TableHeader format={format()} />
-            <TableBody guesses={guessList} correctGuess={guess(2)} format={format()} />
+            <TableHeader format={league?.format} />
+            <TableBody guesses={guessList} correctGuess={correctGuess} format={league?.format} />
         </table>
+        {showInput&&<div className="input">
+        <Autocomplete
+            disablePortal
+            options={league.options}
+            isOptionEqualToValue={(option,value)=>option?.id===value?.id}
+            getOptionLabel={(option)=>option.name+", "+option.number+", "+option.age+" "}
+            blurOnSelect
+            clearOnBlur
+            onChange={(e,newValue)=>onGuess(newValue?.id)}
+            sx={{ width: 300 }}
+            renderInput={(params) => <TextField {...params} label="Player" />}
+/>
+            
+        </div>}
+
     </div>
 }

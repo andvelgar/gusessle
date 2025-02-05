@@ -1,3 +1,6 @@
+/* * {
+    outline: yellowgreen solid 1px;
+} */
 .app {
     width: 100vw;
     min-height: 100vh;
@@ -7,6 +10,7 @@
     align-items: center;
     overflow-y: scroll;
     overflow-x: hidden;
+    font-family: "Roboto", serif;
 }
 
 .shadow-card {
@@ -17,24 +21,38 @@
     height: fit-content;
     padding: 20px;
 }
+.answer-table{
+    outline: red 1px solid;
+    min-width: 80vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    
+}
+.input{
+    max-width: 500px;
+    width: 50vh;
+    min-width: 100px;
+}
 
 .guess-table {
-    max-width: 80vw;
+    max-width: 90vw;
 }
 
 th {
 
-    color: black;
-    background-color: rgb(201, 192, 192);
+
 }
 
 td {
     width: min-content;
-    padding: 10px;
+    padding: 0.2vw;
 }
 
 td .cell {
-    border-radius: 5px;
+    border-radius: 1vw;
     color: white;
     text-align: center;
 
@@ -43,22 +61,26 @@ td .cell {
     text-align: center;
     align-content: center;
     height: 5vw;
-
+    font-size: 2vw;
 }
 
 td .cell:not(.id) {
     width: 5vw;
-    font-size: 2vw;
+
 }
 
 td .cell.id {
-    padding: 0 10px;
-    font-size: 2rem;
+    padding: 0 1vw;
+    display: flex;
+    color:black;
+    justify-content: flex-start;
 }
 td .cell.id div{
     height: 100%;
+    width: 100%;
     display: inline-flex;
     align-items: center;
+    justify-content: flex-start;
 }
 
 td .cell.id div img{
@@ -74,9 +96,9 @@ td .cell.correct {
 }
 
 td .cell.wrong {
-    background: rgba(255, 0, 0, 0.767);
+    background: rgba(255, 0, 0, 0.7);
 }
 
 td .cell.warning {
-    background: rgba(241, 185, 1, 0.699);
+    background: rgba(241, 185, 1, 0.7);
 }

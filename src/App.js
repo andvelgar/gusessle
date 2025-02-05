@@ -1,12 +1,12 @@
 
-import AnswerTable from './answerPanel/AnswerTable';
+import { getLeague } from './api/playersApi';
 import './App.css';
-import {getLeague} from './api/playersApi'
+import Game from './Game';
 
 function App() {
   return (
     <div className='app'>
-        <AnswerTable league={getLeague()}/>
+      <Game league={getLeague()}></Game>
     </div>
   );
 }

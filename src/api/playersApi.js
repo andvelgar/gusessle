@@ -12,10 +12,10 @@ let league = {
     options: [
         {
             "id": 1,
-            "name": "Martinez",
-            "number": 7,
+            "name": "Velascovic",
+            "number": 22,
             "team": "txitxiki",
-            "age": 34
+            "age": 23
         },
         {
             "id": 2,

@@ -13,7 +13,8 @@ export default function BaseCell({
 
     return <td>
         <div className={className}>
-            <span>{text}</span>
+            {text}
+
         </div>
     </td>
 }
