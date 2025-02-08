@@ -22,7 +22,6 @@
     padding: 20px;
 }
 .answer-table{
-    outline: red 1px solid;
     min-width: 80vw;
     display: flex;
     flex-direction: row;

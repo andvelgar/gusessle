@@ -3,19 +3,21 @@ import AnswerTable from "./answerPanel/AnswerTable"
 import { guess } from "./api/playersApi"
 import { Dialog,DialogContent,DialogContentText,DialogTitle,DialogActions,Button } from "@mui/material"
 export default function Game({
-    league,
 }) {
     function getRandomPlayer(){
         return guess(Math.round(Math.random() * league?.options?.length))
     }
     const [guessList, setGuessList] = useState([])
     const [correctGuess, setCorrectGuess] = useState(getRandomPlayer())
+    const [leagues,setLeagues] = useState()
 
 
     function onGuess(id) {
         if (guessList.map(g => g.id).includes(id)) return
         setGuessList([...guessList, guess(id)])
     }
+
+    
 
     function handleClose(){
         setGuessList([])

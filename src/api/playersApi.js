@@ -6,16 +6,25 @@ export const AttributeTypes = {
     "HigherLower": "HigherLower",
     "List": "List",
     "ListIcon": "ListIcon",
-    "Id":"Id"
+    "Id":"Id",
+
 };
-let league = {
+let leagues = [{
     options: [
         {
             "id": 1,
             "name": "Velascovic",
             "number": 22,
             "team": "txitxiki",
-            "age": 23
+            "age": 23,
+            "pos":"FW"
+        },
+        {
+            "id": 99,
+            "name": "Iturbitxo",
+            "number": 7,
+            "team": "alaves",
+            "age": 23,
         },
         {
             "id": 2,
@@ -377,8 +386,9 @@ let league = {
             header: "TALDEA",
             type: AttributeTypes.ListIcon,
             list: {
-                txitxiki: "/txitxiki.png",
-                cabj:"cabj.png"
+                txitxiki: "txitxiki.png",
+                cabj:"cabj.png",
+                alaves:"alaves.png"
             }
         },
         {
@@ -386,14 +396,29 @@ let league = {
             header: "ADINA",
             type: AttributeTypes.HigherLower
         },
+        {
+            key:"pos",
+            header:"POSIZOA",
+            type:AttributeTypes.List,
+            list:[
+                "MD",
+                "FW",
+                "P",
+                "D"
+            ]
+        },
 
 
     ]
-}
+}]
 
 
 export function format() {
     return league.format
+}
+
+export function createLeague(league){
+    leagues.push(league)
 }
 
 export function guess(id) {
